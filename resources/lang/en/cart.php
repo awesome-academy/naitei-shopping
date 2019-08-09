@@ -9,4 +9,13 @@ return [
     'total' => 'Total',
     'order-now' => 'Order Now',
     'add-to-cart' => 'Add to cart',
+    'quantity' => 'Qty',
+    'shipping' => 'Shipping',
+    'image' => 'Image',
+    'product' => 'Product',
+    'price' => 'Price',
+    'table-quantity' => 'Quantity',
+    'update' => 'Update',
+    'remove' => 'Remove',
+    'buy-now' => 'Buy now',
 ];

@@ -58,6 +58,7 @@ class RegisterController extends Controller
             'role' => Role::getValue('Customer'),
         ));
         $user->save();
+        
         return view('auth.verify')->with('status', trans('message.register-success'));
     }
 

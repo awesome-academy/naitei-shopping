@@ -38,3 +38,8 @@ Route::get('/register', 'Auth\RegisterController@create')->name('register');
 Route::post('/register', 'Auth\RegisterController@store');
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('/product/{id?}', 'UserController@comment')->name('user.comment');
+Route::post('/cart/add', 'CartController@addToCart')->name('cart.add');
+Route::get('/cart/destroy', 'CartController@destroy')->name('cart.destroy');
+Route::get('/cart/remove/{id}', 'CartController@remove')->name('cart.remove');
+Route::get('/cart', 'CartController@index')->name('cart');
+Route::post('/cart/update', 'CartController@update')->name('cart.update');
