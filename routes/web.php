@@ -12,15 +12,25 @@
 Route::prefix('/admin')->group(function(){
     Route::middleware('admin.auth')->group(function(){
         Route::get('/', 'Admin\DashboardController@index')->name('admin_dashboard_index');
-        Route::get('/user', 'Admin\UserController@index')->name('admin_user_index');
-        Route::get('/user/create', 'Admin\UserController@create')->name('admin_user_create');
-        Route::post('/user/store', 'Admin\UserController@store')->name('admin_user_store');
-        Route::get('/user/show/{id?}', 'Admin\UserController@show')->name('admin_user_show');
-        Route::get('/user/edit/{id?}', 'Admin\UserController@edit')->name('admin_user_edit');
-        Route::post('/user/update/{id?}', 'Admin\UserController@update')->name('admin_user_update');
-        Route::get('/user/delete/{id?}', 'Admin\UserController@destroy')->name('admin_user_destroy');
-        
-        Route::get('/product', 'Admin\ProductController@index')->name('admin_product_index');
+        Route::prefix('/user')->group(function(){
+            Route::get('/', 'Admin\UserController@index')->name('admin_user_index');
+            Route::get('/create', 'Admin\UserController@create')->name('admin_user_create');
+            Route::post('/store', 'Admin\UserController@store')->name('admin_user_store');
+            Route::get('/show/{id?}', 'Admin\UserController@show')->name('admin_user_show');
+            Route::get('/edit/{id?}', 'Admin\UserController@edit')->name('admin_user_edit');
+            Route::post('/update/{id?}', 'Admin\UserController@update')->name('admin_user_update');
+            Route::get('/delete/{id?}', 'Admin\UserController@destroy')->name('admin_user_destroy');
+        });
+        Route::prefix('/product')->group(function(){
+            Route::get('/', 'Admin\ProductController@index')->name('admin_product_index');
+            Route::get('/create', 'Admin\ProductController@create')->name('admin_product_create');
+            Route::post('/store', 'Admin\ProductController@store')->name('admin_product_store');
+            Route::get('/show/{id?}', 'Admin\ProductController@show')->name('admin_product_show');
+            Route::get('/edit/{id?}', 'Admin\ProductController@edit')->name('admin_product_edit');
+            Route::post('/update/{id?}', 'Admin\ProductController@update')->name('admin_product_update');
+            Route::get('/delete/{id?}', 'Admin\ProductController@destroy')->name('admin_product_destroy');
+            Route::post('/import', 'Admin\ProductController@importData')->name('admin_product_import_data');
+        });
         Route::get('/category', 'Admin\CategoryController@index')->name('admin_category_index');
         Route::get('/order', 'Admin\OrderController@index')->name('admin_order_index');
         Route::get('/logout', 'Admin\AuthController@logout')->name('admin_logout');

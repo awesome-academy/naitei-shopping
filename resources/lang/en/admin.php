@@ -61,6 +61,7 @@ return [
     ],
     'product' => [
         'name' => 'Manage/Product',
+        'import' => 'Import Data',
         'table' => [
             'coloum' => [
                 'id' => 'ID',
@@ -68,8 +69,15 @@ return [
                 'des' => 'Description',
                 'img' => 'Image',
                 'price' => 'Price',
+                'category' => 'Category',
             ],
         ],
+        'show' => 'Show Information Product',
+        'errorFile' => 'File data not found/not exits!',
+        'update' => 'Update success!',
+        'file' => '.csv',
+        'create' => 'Create new product',
+        'success_create_product' => "Create product success!",
     ],
     'order' => [
         'name' => 'Manage/Order',

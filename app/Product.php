@@ -10,6 +10,10 @@ use App\Category;
 
 class Product extends Model
 {
+    protected $fillable = [
+        'name', 'description', 'price', 'img', 'price', 'status',
+    ];
+
     public function comments()
     {
         return $this->hasMany(Comment::class);

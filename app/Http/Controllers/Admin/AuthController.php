@@ -14,7 +14,7 @@ use App\Http\Requests\AdminLoginRequest;
 class AuthController extends Controller
 {
     public function index(){
-
+        
         return view ('admin.login');
     }
 
